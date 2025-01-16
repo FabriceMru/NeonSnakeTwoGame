@@ -1,0 +1,229 @@
+/* **1. Grundlegendes Layout und Hintergrundstil** */
+body {
+    background-color: #0f0f1e;
+    color: #00fff7;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 {
+    color: #ff007f;
+    font-size: 3em;
+    text-shadow: 0 0 10px #ff007f;
+    margin-bottom: 40px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* **2. Spiellayout und Abschnitte (Steuerung, Spielfeld, Anleitung)** */
+.game-layout {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.instructions,
+.controls {
+    width: 250px;
+    background-color: rgba(0, 255, 247, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #00fff7;
+    box-shadow: 0 0 10px rgba(0, 255, 247, 0.3);
+}
+
+.instructions h2,
+.controls h2 {
+    color: #ff007f;
+    margin-top: 0;
+    text-align: center;
+}
+
+.instructions p,
+.controls p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* **3. Spielfeld und Punktestand** */
+#spielfeld {
+    border: 2px solid #00fff7;
+    border-radius: 20px;
+    background-color: #1a1a2d;
+    box-shadow: 0 0 20px #00fff7;
+}
+
+.score-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+#punktestand,
+#highscore {
+    color: #ff007f;
+    font-size: 1.5em;
+    text-shadow: 0 0 5px #ff007f;
+}
+
+/* **4. Level-Auswahl Buttons** */
+.level-selection {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.level-button {
+    background-color: #ff007f;
+    color: #1a1a2d;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.level-button:hover {
+    background-color: #00e0e0;
+    box-shadow: 0 0 10px #00fff7;
+    transform: scale(1.1);
+}
+
+/* **5. Nachricht für aktuelles Level** */
+#level-message {
+    background-color: rgba(0, 255, 247, 0.1);
+    color: #00fff7;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-align: center;
+    border: 2px solid #00fff7;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #00fff7;
+    margin-bottom: 20px;
+    display: block;
+}
+
+#level-message.show {
+    display: block;
+    text-shadow: 0 0 10px #00fff7;
+}
+
+/* **6. Animationen für Übergänge** */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* **7. Steuerung (Visuelles Keyboard)** */
+.key-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.key {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #00fff7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00fff7;
+    background-color: rgba(0, 255, 247, 0.1);
+    box-shadow: 0 0 10px #00fff7;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.key:hover {
+    background-color: #00fff7;
+    color: #1a1a2d;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00fff7;
+}
+
+.key-placeholder {
+    width: 60px;
+    height: 60px;
+    visibility: hidden;
+}
+
+/* **8. Game Over Popup** */
+#game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#game-over.hidden {
+    display: none;
+}
+
+.game-over-content {
+    background-color: #1a1a2d;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #00fff7;
+    text-align: center;
+    box-shadow: 0 0 30px #00fff7;
+}
+
+/* **9. Buttons (Neustart und Start)** */
+.play-again-button,
+.start-button {
+    background-color: #00fff7;
+    color: #1a1a2d;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00fff7;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.play-again-button:hover,
+.start-button:hover {
+    background-color: #00e0e0;
+    color: #0f0f1e;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00fff7;
+}

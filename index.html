@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NeonCyber SnakeTwo</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Neon SnakeTwo</h1>
+        <div id="level-message" class="hidden"></div>
+
+        <div class="game-layout">
+            <div class="instructions">
+                <h2>Spielanleitung</h2>
+                <p>Sammle die pinken Äpfel, um zu wachsen</p>
+                <p>
+                    Vermeide Kollisionen mit dir selbst oder mit hHindernissen
+                </p>
+                <p>Du kannst durch die Wände gehen</p>
+                <p>Jeder Apfel gibt 10 Punkte</p>
+            </div>
+
+            <div class="game-container">
+                <div class="score-container">
+                    <div id="punktestand">Punkte: 0</div>
+                    <div id="highscore">Highscore: 0</div>
+                </div>
+
+                <canvas id="spielfeld"></canvas>
+
+                <button id="start-button" class="start-button">
+                    Neues Spiel
+                </button>
+
+                <div class="level-selection">
+                    <button class="level-button" onclick="setLevel(1)">
+                        Level 1
+                    </button>
+                    <button class="level-button" onclick="setLevel(2)">
+                        Level 2
+                    </button>
+                    <button class="level-button" onclick="setLevel(3)">
+                        Level 3
+                    </button>
+                    <button class="level-button" onclick="setLevel(4)">
+                        Level 4
+                    </button>
+                    <button class="level-button" onclick="setLevel(5)">
+                        Level 5
+                    </button>
+                </div>
+            </div>
+            <div class="controls">
+                <h2>Steuerung</h2>
+                <div class="key-controls">
+                    <div class="key-placeholder"></div>
+                    <div class="key" onclick="setDirection('oben')">↑</div>
+                    <div class="key-placeholder"></div>
+                    <div class="key" onclick="setDirection('links')">←</div>
+                    <div class="key-placeholder"></div>
+                    <div class="key" onclick="setDirection('rechts')">→</div>
+                    <div class="key-placeholder"></div>
+                    <div class="key" onclick="setDirection('unten')">↓</div>
+                    <div class="key-placeholder"></div>
+                </div>
+                <p>Nutze die Pfeiltasten zur Steuerung</p>
+            </div>
+        </div>
+
+        <div id="game-over" class="hidden">
+            <div class="game-over-content">
+                <h2>Game Over</h2>
+                <button class="play-again-button" onclick="startGame()">
+                    Neustart?
+                </button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
