@@ -10,4 +10,5 @@
 -   Highscore-System, das den höchsten Punktestand speichert.
 -   GitHub Pages-Hosting, um das Spiel direkt online zu spielen.
 
+[Github Pages Link](https://fabricemru.github.io/NeonSnakeTwoGame/)
 ![alt text](image.png)
