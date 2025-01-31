@@ -38,7 +38,7 @@ Level:
 -   Level 3: Mehr Hindernisse, etwas schneller.
 -   Level 4: Wenige Hindernisse, höhere Geschwindigkeit.
 -   Level 5: Viele Hindernisse, maximale Geschwindigkeit.
--
+
 
 ### Highscore: Dein höchster Punktestand wird gespeichert und angezeigt.
 
